@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PreventiveHealth.ai Website Versions</title>
-  <meta name="description" content="Choose between the two PreventiveHealth.ai landing page versions." />
+  <meta name="description" content="Choose between the three PreventiveHealth.ai landing page versions." />
   <style>
     :root{
       --black:#100D0A;
@@ -30,7 +30,7 @@
       color:var(--black);
     }
     main{
-      width:min(760px, 100%);
+      width:min(1000px, 100%);
       background:rgba(255,249,239,.86);
       border:1px solid var(--line);
       border-radius:18px;
@@ -61,7 +61,7 @@
     }
     .links{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1fr 1fr 1fr;
       gap:14px;
     }
     a{
@@ -95,6 +95,12 @@
       border-color:rgba(239,195,123,.34);
     }
     .v2 span{color:#D6CAB9}
+    .v3{
+      background:linear-gradient(135deg, #1a3a2a 0%, #0f2418 100%);
+      color:#E8F5EE;
+      border-color:rgba(100,180,120,.34);
+    }
+    .v3 span{color:#A8CCB4}
     .tag{
       display:inline-flex;
       margin-bottom:16px;
@@ -104,7 +110,7 @@
       letter-spacing:.18em;
       text-transform:uppercase;
     }
-    @media (max-width:640px){
+    @media (max-width:760px){
       body{padding:18px}
       main{padding:28px}
       .links{grid-template-columns:1fr}
@@ -116,15 +122,19 @@
     <img src="assets/preventivehealth-logo-lightmode-web.png" alt="PreventiveHealth.ai" />
     <div class="tag">Website Preview</div>
     <h1>Choose a version</h1>
-    <p>These are the two PreventiveHealth.ai landing page versions prepared for review.</p>
+    <p>Three PreventiveHealth.ai landing page directions prepared for review.</p>
     <div class="links">
       <a href="preventivehealth-ai-website-branded.html">
-        <strong>Version 1</strong>
+        <strong>Version 1 — Vedant</strong>
         <span>Original branded color direction.</span>
       </a>
       <a class="v2" href="preventivehealth-ai-website-branded-v2.html">
-        <strong>Version 2</strong>
+        <strong>Version 2 — Vedant</strong>
         <span>Black, gold, beige direction with Fraunces typography.</span>
+      </a>
+      <a class="v3" href="preventivehealth-ai-website-v30.html">
+        <strong>Version 3 — NJ</strong>
+        <span>NJ's direction for the landing page.</span>
       </a>
     </div>
   </main>
