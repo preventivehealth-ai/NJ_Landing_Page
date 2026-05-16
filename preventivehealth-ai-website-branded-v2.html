@@ -1101,6 +1101,128 @@
     border-top-color:rgba(16,13,10,0.12);
     color:var(--taupe);
   }
+
+  /* ===== THEME TOGGLE BUTTON ===== */
+  .theme-toggle{
+    flex-shrink:0;
+    display:inline-flex;align-items:center;justify-content:center;
+    width:36px;height:36px;
+    background:rgba(16,13,10,0.06);
+    border:1px solid rgba(16,13,10,0.14);
+    border-radius:10px;
+    color:var(--gold-deep);
+    cursor:pointer;
+    transition:background .2s, border-color .2s;
+    padding:0;
+  }
+  .theme-toggle:hover{
+    background:rgba(194,138,46,0.14);
+    border-color:rgba(194,138,46,0.40);
+  }
+  .theme-toggle .icon-sun{display:block}
+  .theme-toggle .icon-moon{display:none}
+  body.light .theme-toggle .icon-sun{display:none}
+  body.light .theme-toggle .icon-moon{display:block}
+
+  /* ===== LIGHT MODE OVERRIDES ===== */
+  body.light .hero{
+    background:var(--beige-3);
+    color:var(--black);
+    border-bottom-color:rgba(16,13,10,0.12);
+  }
+  body.light .hero::before{
+    background:
+      radial-gradient(34% 44% at 18% 12%, rgba(194,138,46,0.11), transparent 72%),
+      radial-gradient(34% 44% at 86% 20%, rgba(239,195,123,0.10), transparent 72%),
+      radial-gradient(40% 54% at 50% 100%, rgba(194,138,46,0.06), transparent 76%);
+  }
+  body.light .hero h1{color:var(--black)}
+  body.light .hero h1 em{color:var(--gold-deep)}
+  body.light .hero-lede{color:var(--taupe)}
+  body.light .path-card.individuals,
+  body.light .path-card.providers{
+    background:#FFF9EF;
+    border-color:rgba(194,138,46,0.22);
+    color:var(--black);
+    box-shadow:var(--shadow);
+  }
+  body.light .path-card.individuals:hover,
+  body.light .path-card.providers:hover{border-color:rgba(194,138,46,0.54)}
+  body.light .path-card h3{color:var(--black)}
+  body.light .path-card p{color:var(--taupe)}
+  body.light .path-card-arrow{color:var(--black)}
+  body.light .card,
+  body.light .paid-card,
+  body.light .genepath-block{
+    background:#FFF9EF;
+    border-color:rgba(194,138,46,0.20);
+    color:var(--black);
+  }
+  body.light .founder-story{
+    background:linear-gradient(135deg, #EFE6D9 0%, var(--beige-2) 100%);
+    border-color:rgba(194,138,46,0.16);
+  }
+  body.light .founder-story::before{
+    background:
+      radial-gradient(50% 70% at 100% 0%, rgba(194,138,46,0.10), transparent 70%),
+      radial-gradient(40% 50% at 0% 100%, rgba(239,195,123,0.08), transparent 70%);
+  }
+  body.light .card h3,
+  body.light .paid-body h3,
+  body.light .genepath-block h3,
+  body.light .founder-text h2,
+  body.light .founder-text .sig{color:var(--black)}
+  body.light .card p,
+  body.light .paid-body p,
+  body.light .founder-text p{color:var(--taupe)}
+  body.light .card .badge,
+  body.light .paid-header .badge{color:var(--gold-deep)}
+  body.light .card-visual,
+  body.light .paid-cover{background:var(--beige-2)}
+  body.light .card.has-wide .card-visual,
+  body.light .card.has-fullbleed .card-visual{background:var(--beige-3)}
+  body.light .card.has-phone .card-visual{
+    background:linear-gradient(135deg, #EFE6D9, #E8DECE);
+  }
+  body.light .card-link{color:var(--black)}
+  body.light .card:hover .card-link{color:var(--gold-deep)}
+  body.light .paid-cta.outline{color:var(--gold-deep);border-color:var(--gold-deep)}
+  body.light .cta-pill,
+  body.light .app-badges a{
+    background:rgba(194,138,46,0.08);
+    color:var(--black);
+    border-color:rgba(194,138,46,0.26);
+  }
+  body.light .cta-pill.primary,
+  body.light .cta-pill:hover,
+  body.light .app-badges a:hover,
+  body.light .paid-cta{
+    background:var(--gold);
+    color:#FFF9EF;
+    border-color:var(--gold);
+  }
+  body.light .feature-list li{color:var(--taupe)}
+  body.light .feature-list li::before{background:var(--gold)}
+  body.light .genepath-block .eyebrow,
+  body.light .genepath-tag,
+  body.light .gp-stats strong{color:var(--gold-deep)}
+  body.light .genepath-block p,
+  body.light .genepath-tag small,
+  body.light .gp-stats span{color:var(--taupe)}
+  body.light .gp-stats div{
+    background:rgba(16,13,10,0.04);
+    border-color:rgba(16,13,10,0.10);
+  }
+  body.light .section-divider .pill,
+  body.light .section-divider.gold .pill{
+    background:#FFF9EF;
+    color:var(--black);
+    border-color:rgba(16,13,10,0.12);
+  }
+  body.light .section-divider .pill::before,
+  body.light .section-divider .pill::after,
+  body.light .section-divider.gold .pill::before,
+  body.light .section-divider.gold .pill::after{background:var(--gold)}
 </style>
 </head>
 <body>
@@ -1119,6 +1241,10 @@
       <a href="#team">Team</a>
       <a href="https://calendly.com/preventivehealth-ai/30min" target="_blank" rel="noopener" class="nav-demo">Book a Demo →</a>
     </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light mode">
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
   </div>
 </header>
@@ -1628,6 +1754,12 @@
   const btn = document.getElementById('menuBtn');
   const links = document.getElementById('navLinks');
   btn.addEventListener('click', () => links.classList.toggle('open'));
+  const themeBtn = document.getElementById('themeToggle');
+  if (localStorage.getItem('ph-theme') === 'light') document.body.classList.add('light');
+  themeBtn.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light');
+    localStorage.setItem('ph-theme', isLight ? 'light' : 'dark');
+  });
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
